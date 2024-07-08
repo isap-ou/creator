@@ -2,7 +2,7 @@
 
 namespace IsapOu\Creator;
 
-class ServiceProvider extends \Illuminate\Support\ServiceProvider
+class CreatorServiceProvider extends \Illuminate\Support\ServiceProvider
 {
     /**
      * Register services.
