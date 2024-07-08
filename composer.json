@@ -1,0 +1,32 @@
+{
+  "name": "isap-ou/creator",
+  "description": "Add information about developers to Website",
+  "type": "library",
+  "require": {
+    "php": "^8.1",
+    "guzzlehttp/guzzle": "^7",
+    "illuminate/support": "^9|^10|^11"
+  },
+  "require-dev": {
+    "laravel/pint": "^1"
+  },
+  "license": "proprietary",
+  "autoload": {
+    "psr-4": {
+      "IsapOu\\Creator\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Andrii Trush",
+      "email": "contact@isap.me"
+    }
+  ],
+  "extra": {
+    "laravel": {
+      "providers": [
+        "IsapOu\\Creator\\ServiceProvider"
+      ]
+    }
+  }
+}

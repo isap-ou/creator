@@ -1,0 +1,16 @@
+{
+  "@context": "http://schema.org",
+  "@type": "WebPage",
+  "creator": {
+    "@type": "Organization",
+    "name": "ISAP OÜ",
+    "url": "https://isap.me",
+    "email": "contact@isap.me",
+    "image": "https://isap.me/logo.png",
+    "sameAs": [
+      "https://isapp.be",
+      "https://isapp.nl",
+      "https://linkedin.com/company/isap-ou"
+    ]
+  }
+}
