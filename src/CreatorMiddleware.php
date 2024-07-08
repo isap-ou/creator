@@ -13,7 +13,6 @@ use Throwable;
 
 use function json_validate;
 use function sprintf;
-use function xdebug_break;
 
 class CreatorMiddleware
 {
@@ -24,7 +23,6 @@ class CreatorMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        xdebug_break();
         $response = $next($request);
         if (!$response->isOk() || !$response instanceof \Illuminate\Http\Response) {
             return $next($request);
@@ -45,7 +43,7 @@ META_EOL;
         $creatorHtml .= Cache::remember('isap_ou_creator_information', Carbon::now()->addDays(2), function () {
             $json = File::get(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'schema.json');
             try {
-                $url = 'http://example.com';
+                $url = 'https://raw.githubusercontent.com/isap-ou/creator/main/schema.json';
                 $options = [
                     'http' => [
                         'timeout' => 1,  // Timeout in seconds
