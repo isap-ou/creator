@@ -13,6 +13,7 @@ use Throwable;
 
 use function json_validate;
 use function sprintf;
+use function xdebug_break;
 
 class CreatorMiddleware
 {
@@ -24,14 +25,14 @@ class CreatorMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         $response = $next($request);
-        if (!$response->isOk() || !$response instanceof \Illuminate\Http\Response) {
-            return $next($request);
+        if (!$response->isOk() || !$response instanceof \Illuminate\Http\Response || $request->method() !== 'GET') {
+            return $response;
         }
 
         $content = $response->getContent();
 
         if (!Str::contains($content, '<head')) {
-            return $next($request);
+            return $response;
         }
 
         $creatorHtml = <<<META_EOL
