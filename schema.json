@@ -1,16 +1,14 @@
 {
-  "@context": "http://schema.org",
-  "@type": "WebPage",
-  "creator": {
-    "@type": "Organization",
-    "name": "ISAP OÜ",
-    "url": "https://isap.me",
-    "email": "contact@isap.me",
-    "image": "https://isap.me/logo.png",
-    "sameAs": [
-      "https://isapp.be",
-      "https://isapp.nl",
-      "https://linkedin.com/company/isap-ou"
-    ]
-  }
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://isapp.be#developer",
+  "name": "ISAPP",
+  "url": "https://isapp.be",
+  "email": "contact@isap.me",
+  "logo": "https://cdn.isap.me/logo-512.png",
+  "sameAs": [
+    "https://isap.me",
+    "https://isapp.nl",
+    "https://linkedin.com/company/isap-ou"
+  ]
 }

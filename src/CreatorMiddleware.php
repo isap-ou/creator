@@ -35,13 +35,9 @@ class CreatorMiddleware
             return $response;
         }
 
-        $creatorHtml = <<<META_EOL
-<meta name="creator" content="ISAP OÜ" />
-<meta name="creator-url" content="https://isap.me" />
-<meta name="creator-email" content="contact@isap.me" />
-META_EOL;
 
-        $creatorHtml .= Cache::remember('isap_ou_creator_information', Carbon::now()->addDays(2), function () {
+
+        $creatorHtml = Cache::remember('isapp_creator_information', Carbon::now()->addDays(2), function () {
             $json = File::get(__DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'schema.json');
             try {
                 $url = 'https://raw.githubusercontent.com/isap-ou/creator/main/schema.json';
